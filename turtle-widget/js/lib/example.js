@@ -36,15 +36,73 @@ var TurtleModel = widgets.DOMWidgetModel.extend({
 var TurtleView = widgets.DOMWidgetView.extend({
     // Defines how the widget gets rendered into the DOM
     render: function() {
-        this._canvas = new turtle.TurtleComponent(this.el);
-        this._canvas.width = 400;
-        this._canvas.height = 400;
-        this._canvas.canvasStyle = 'border: solid 1px black; position: absolute !important;';
-        this._canvas.initializeCanvas(this.el);
+        this.create_canvas();
+        this.turtle = this.canvas.getTurtle();
 
-        // Observe changes in the value traitlet in Python, and define
-        // a custom callback.
-        // this.model.on('change:value', this.value_changed, this);
+        this.set_turtle();
+
+        this.model.on('change:command', this.execute, this);
+    },
+
+    create_canvas: function() {
+        // console.log('create canvas');
+
+        this.canvas = new turtle.TurtleComponent(this.el);
+        this.canvas.width = 400;
+        this.canvas.height = 400;
+        this.canvas.canvasStyle = 'border: solid 1px black; position: absolute !important;';
+        this.canvas.initializeCanvas(this.el);
+
+        this.set_canvas();
+    },
+
+    execute: function() {
+        // console.log('execute canvas');
+        // console.log(this.model.get('command'));
+        this.command = this.model.get('command');
+
+        if (this.command.function_name) {
+            // console.log(this.command.function_name);
+            this.run();
+            this.model.set('command', {});
+            this.model.save_changes();
+        }
+    },
+
+    set_canvas: function() {
+        // console.log('set_canvas');
+        this.model.set('canvas', { 'element': this.canvas });
+        this.model.save_changes();
+    },
+
+    set_turtle: function() {
+        // console.log('set_turtle');
+        this.model.set('turtle', { 'element': this.turtle });
+        this.model.save_changes();
+    },
+
+    get_canvas: function() {
+        // console.log('get_canvas');
+        let canvas = this.model.get('canvas');
+
+        if (canvas) return canvas.element;
+    },
+
+    get_turtle: function() {
+        // console.log('get_turtle');
+        let turtle = this.model.get('turtle');
+
+        if (turtle) return turtle.element;
+    },
+
+    run: function() {
+        // console.log('run forward');
+
+        if (this.turtle) {
+            this.turtle[this.command['function_name']](...this.command['args']);
+            this.set_turtle();
+            this.model.save_changes();
+        }
     },
 
 });

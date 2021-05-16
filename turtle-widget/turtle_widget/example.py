@@ -5,8 +5,6 @@ from traitlets import Unicode, List
 
 @widgets.register
 class Turtle(widgets.DOMWidget):
-    """An example widget."""
-
     # Name of the widget view class in front-end
     _view_name = Unicode('TurtleView').tag(sync=True)
 
@@ -24,5 +22,25 @@ class Turtle(widgets.DOMWidget):
     # Version of the front-end module containing widget model
     _model_module_version = Unicode('^0.1.0').tag(sync=True)
 
-    _command_list = List([]).tag(sync=True)
+    command = Dict({ 'function_name': 'idle', 'args': [] }).tag(sync=True)
+    canvas = Dict({ 'element': None })
+    turtle = Dict({ 'element': None })
 
+    def forward(self, distance):
+        self.command = { 'function_name': 'forward', 'args': [distance] }
+        self.command = {}
+
+    def backward(self, distance):
+        self.forward(distance*-1)
+
+    def right(self, angle):
+        self.command = { 'function_name': 'right', 'args': [angle] }
+        self.command = {}
+
+    def left(self, angle):
+        self.command = { 'function_name': 'left', 'args': [angle] }
+        self.command = {}
+
+    def color(self, color):
+        self.command = { 'function_name': 'setLineColor', 'args': [color] }
+        self.command = {}
