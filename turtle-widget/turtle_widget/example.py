@@ -1,5 +1,5 @@
 import ipywidgets as widgets
-from traitlets import Unicode, List
+from traitlets import Unicode, Dict, observe
 
 # See js/lib/example.js for the frontend counterpart to this file.
 
@@ -28,19 +28,31 @@ class Turtle(widgets.DOMWidget):
 
     def forward(self, distance):
         self.command = { 'function_name': 'forward', 'args': [distance] }
-        self.command = {}
 
     def backward(self, distance):
         self.forward(distance*-1)
 
     def right(self, angle):
         self.command = { 'function_name': 'right', 'args': [angle] }
-        self.command = {}
 
     def left(self, angle):
         self.command = { 'function_name': 'left', 'args': [angle] }
-        self.command = {}
 
     def color(self, color):
         self.command = { 'function_name': 'setLineColor', 'args': [color] }
+
+    def circle(self, radius):
+        self.command = { 'function_name': 'circle', 'args': [radius] }
+
+    def rectangle(self, width, height):
+        self.command = { 'function_name': 'rectangle', 'args': [width, height] }
+
+    def speed(self, value):
+        self.command = { 'function_name': 'speed', 'args': [value] }
+
+    def set_position(self, x, y):
+        self.command = { 'function_name': 'setPosition', 'args': [x, y] }
+
+    @observe('command')
+    def reset_command(self, args):
         self.command = {}
