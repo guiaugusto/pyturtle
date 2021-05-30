@@ -1,5 +1,5 @@
 import ipywidgets as widgets
-from traitlets import Unicode, Dict, Integer, observe
+from traitlets import Unicode, Dict, Integer, Float, observe
 
 @widgets.register
 class Turtle(widgets.DOMWidget):
@@ -8,7 +8,6 @@ class Turtle(widgets.DOMWidget):
     def __init__(self, id, canvas):
         self._model_id = id
         self.canvas = canvas
-        super()
 
     def forward(self, distance):
         self.canvas['instance'].command = {
@@ -79,12 +78,20 @@ class TurtleCanvas(widgets.DOMWidget):
     _model_module_version = Unicode('^0.1.0').tag(sync=True)
     _auto_increment_counter = Integer(0).tag(sync=True)
 
+    width = Integer(400).tag(sync=True)
+    height = Integer(400).tag(sync=True)
+    canvas_style = Unicode('border: solid 1px black; position: relative !important;').tag(sync=True)
+    sprite_scale = Float(1.0).tag(sync=True)
+
     command = Dict({}).tag(sync=True)
     last_turtle = Dict({}).tag(sync=True)
 
-    @observe('last_turtle')
-    def build_turtles(self, event):
-        self.last_turtle = {}
+    def __init__(self, **kwargs):
+        super().__init__()
+        self.width = kwargs.get('width', self.width)
+        self.height = kwargs.get('height', self.height)
+        self.canvas_style = kwargs.get('canvas_style', self.canvas_style)
+        self.sprite_scale = kwargs.get('sprite_scale', self.sprite_scale)
 
     def create_turtle(self):
         turtle = Turtle(self._auto_increment_counter, { 'instance': self })
@@ -96,3 +103,7 @@ class TurtleCanvas(widgets.DOMWidget):
     @observe('command')
     def reset_command(self, event):
         self.command = {}
+
+    @observe('last_turtle')
+    def build_turtles(self, event):
+        self.last_turtle = {}

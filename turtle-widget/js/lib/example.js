@@ -1,6 +1,6 @@
 var widgets = require('@jupyter-widgets/base');
 var _ = require('lodash');
-var t = require('../node_modules/turtle-component');
+var turtleComponent = require('../node_modules/turtle-component');
 
 var TurtleCanvasModel = widgets.DOMWidgetModel.extend({
     defaults: _.extend(widgets.DOMWidgetModel.prototype.defaults(), {
@@ -29,11 +29,12 @@ var TurtleCanvasView = widgets.DOMWidgetView.extend({
     },
 
     create_canvas: function() {
-        this.canvas = new t.TurtleComponent();
-        this.canvas.width = 400;
-        this.canvas.height = 400;
-        this.canvas.canvasStyle = 'border: solid 1px black; position: relative !important;';
-        this.canvas.spriteScale = 0.2;
+
+        this.canvas = new turtleComponent.TurtleComponent();
+        this.canvas.width = this.model.get('width');
+        this.canvas.height = this.model.get('height');
+        this.canvas.canvasStyle = this.model.get('canvas_style');
+        this.canvas.spriteScale = this.model.get('sprite_scale');
         this.canvas.initializeCanvas(this.el);
 
         this.set_canvas();
