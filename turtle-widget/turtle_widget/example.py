@@ -80,7 +80,7 @@ class TurtleCanvas(widgets.DOMWidget):
 
     width = Integer(400).tag(sync=True)
     height = Integer(400).tag(sync=True)
-    canvas_style = Unicode('border: solid 1px black; position: relative !important;').tag(sync=True)
+    canvas_style = Unicode('border: solid 1px black; position: absolute !important;').tag(sync=True)
     sprite_scale = Float(1.0).tag(sync=True)
 
     command = Dict({}).tag(sync=True)

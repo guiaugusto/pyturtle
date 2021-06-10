@@ -29,13 +29,19 @@ var TurtleCanvasView = widgets.DOMWidgetView.extend({
     },
 
     create_canvas: function() {
-
+        let backgroundCanvas = document.createElement('canvas');
         this.canvas = new turtleComponent.TurtleComponent();
+
         this.canvas.width = this.model.get('width');
         this.canvas.height = this.model.get('height');
+
+        backgroundCanvas.setAttribute('width', this.canvas.width);
+        backgroundCanvas.setAttribute('height', this.canvas.height);
+
         this.canvas.canvasStyle = this.model.get('canvas_style');
         this.canvas.spriteScale = this.model.get('sprite_scale');
         this.canvas.initializeCanvas(this.el);
+        this.el.appendChild(backgroundCanvas);
 
         this.set_canvas();
     },
