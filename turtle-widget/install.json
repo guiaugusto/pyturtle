@@ -1,5 +1,0 @@
-{
-  "packageManager": "python",
-  "packageName": "turtle_widget",
-  "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package turtle_widget"
-}

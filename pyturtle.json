@@ -1,0 +1,5 @@
+{
+  "load_extensions": {
+    "pyturtle/extension": true
+  }
+}
