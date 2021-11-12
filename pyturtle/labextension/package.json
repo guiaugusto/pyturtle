@@ -37,7 +37,7 @@
   "dependencies": {
     "@jupyter-widgets/base": "^1.1 || ^2 || ^3 || ^4",
     "lodash": "^4.17.4",
-    "turtle-component": "^0.9.5"
+    "turtle-component": "0.9.7"
   },
   "jupyterlab": {
     "extension": "lib/labplugin",
@@ -49,7 +49,7 @@
       }
     },
     "_build": {
-      "load": "static/remoteEntry.ad734d5942e27a0a67d6.js",
+      "load": "static/remoteEntry.2f2e528850f8d3b04505.js",
       "extension": "./extension"
     }
   }

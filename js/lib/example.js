@@ -28,7 +28,7 @@ export class TurtleCanvasView extends widgets.DOMWidgetView {
         const turtle = this.model.get('last_turtle');
 
         if (Number.isInteger(turtle.id)) {
-            this.turtles[turtle.id] = this.canvas.getTurtle();
+            this.turtles[turtle.id] = this.canvas.createTurtle();
         }
     }
 
