@@ -1,5 +1,5 @@
 pyturtle.egg-info
-labextension
-nbextension
-node_modules
-dist
+pyturtle/labextension
+pyturtle/nbextension
+js/node_modules/
+js/dist/
