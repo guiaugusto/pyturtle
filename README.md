@@ -1,4 +1,4 @@
-# pyturtle - Turtle Widget for Jupyter Notebook
+# ipyxturtle - Turtle Widget for Jupyter Notebook
 
 Widget adaptation to Jupyter Notebook environment of [turtle graphics](https://docs.python.org/3/library/turtle.html) library, that is inspired by Logo programming language, developed by Wally Feurzeig, Seymour Papert and Cynthia Solomon in 1967.
 
@@ -9,8 +9,8 @@ Simulating robotic commands to draw a figure into a clean surface, you can creat
 # Install
 
 ```sh
-$ pip install pyturtle
-$ jupyter nbextension enable --py --sys-prefix pyturtle
+$ pip install ipyxturtle
+$ jupyter nbextension enable --py --sys-prefix ipyxturtle
 ```
 
 # Commands
@@ -20,7 +20,7 @@ $ jupyter nbextension enable --py --sys-prefix pyturtle
 To start a pyturtle environment, first do you have to instantiate a Canvas.
 
 ```py
-from pyturtle import Canvas
+from ipyxturtle import Canvas
 
 canvas = Canvas()
 canvas
