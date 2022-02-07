@@ -7,5 +7,5 @@ Package Install
 - [node](http://nodejs.org/)
 
 ```bash
-npm install --save pyturtle
+npm install --save ipyxturtle
 ```

@@ -1,6 +1,12 @@
-pyturtle.egg-info
+ipyxturtle.egg-info
 labextension
 nbextension
 node_modules/
 dist/
 __pycache__
+.ipynb_checkpoints
+etc/
+build/
+share/
+yarn.lock
+package-lock.json

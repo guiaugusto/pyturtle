@@ -7,8 +7,8 @@ export class TurtleCanvasModel extends widgets.DOMWidgetModel {
             ...super.defaults(),
             _model_name: 'TurtleCanvasModel',
             _view_name: 'TurtleCanvasView',
-            _model_module: 'pyturtle',
-            _view_module: 'pyturtle',
+            _model_module: 'ipyxturtle',
+            _view_module: 'ipyxturtle',
             _model_module_version: '0.1.0',
             _view_module_version: '0.1.0'
         }
