@@ -4,7 +4,7 @@ nbextension
 node_modules/
 dist/
 __pycache__
-.ipynb_checkpoints
+.ipynb_checkpoints/
 etc/
 build/
 share/
