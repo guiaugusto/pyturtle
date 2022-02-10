@@ -22,7 +22,7 @@ module.exports = (env, argv) => {
             entry: './lib/extension.js',
             output: {
                 filename: 'extension.js',
-                path: path.resolve(__dirname, '..', 'pyturtle', 'nbextension'),
+                path: path.resolve(__dirname, '..', 'ipyxturtle', 'nbextension'),
                 libraryTarget: 'amd',
                 publicPath: 'js/dist' // publicPath is set in extension.js
             },
@@ -37,7 +37,7 @@ module.exports = (env, argv) => {
             entry: './lib/index.js',
             output: {
                 filename: 'index.js',
-                path: path.resolve(__dirname, '..', 'pyturtle', 'nbextension'),
+                path: path.resolve(__dirname, '..', 'ipyxturtle', 'nbextension'),
                 libraryTarget: 'amd',
                 publicPath: 'js/dist',
             },
@@ -47,7 +47,7 @@ module.exports = (env, argv) => {
             },
             externals: ['@jupyter-widgets/base']
         },
-        {// Embeddable pyturtle bundle
+        {// Embeddable ipyxturtle bundle
         //
         // This bundle is generally almost identical to the notebook bundle
         // containing the custom widget views and models.
@@ -66,7 +66,7 @@ module.exports = (env, argv) => {
                 filename: 'index.js',
                 path: path.resolve(__dirname, 'dist'),
                 libraryTarget: 'amd',
-                publicPath: 'https://unpkg.com/pyturtle@' + version + '/dist/'
+                publicPath: 'https://unpkg.com/ipyxturtle@' + version + '/dist/'
             },
             devtool,
             module: { rules: rules },

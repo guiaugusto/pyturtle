@@ -19,10 +19,10 @@ log.set_verbosity(log.DEBUG)
 log.info('setup.py entered')
 log.info('$PATH=%s' % os.environ['PATH'])
 
-name = 'pyturtle'
+name = 'ipyxturtle'
 LONG_DESCRIPTION = 'A Jupyter Widget Library to simulate Logo language in python environment'
 
-# Get pyturtle version
+# Get ipyxturtle version
 version = get_version(pjoin(name, '_version.py'))
 
 js_dir = pjoin(here, 'js')
@@ -33,10 +33,10 @@ jstargets = [
 ]
 
 data_files_spec = [
-    ('share/jupyter/nbextensions/pyturtle', 'pyturtle/nbextension', '*.*'),
-    ('share/jupyter/labextensions/pyturtle', 'pyturtle/labextension', '**'),
-    ('share/jupyter/labextensions/pyturtle', '.', 'install.json'),
-    ('etc/jupyter/nbconfig/notebook.d', '.', 'pyturtle.json'),
+    ('share/jupyter/nbextensions/ipyxturtle', 'ipyxturtle/nbextension', '*.*'),
+    ('share/jupyter/labextensions/ipyxturtle', 'ipyxturtle/labextension', '**'),
+    ('share/jupyter/labextensions/ipyxturtle', '.', 'install.json'),
+    ('etc/jupyter/nbconfig/notebook.d', '.', 'ipyxturtle.json'),
 ]
 
 cmdclass = create_cmdclass('jsdeps', data_files_spec=data_files_spec)
@@ -58,7 +58,7 @@ setup_args = dict(
     cmdclass=cmdclass,
     author='Guilherme Silva',
     author_email='guilherme.francais@gmail.com',
-    url='https://github.com//pyturtle',
+    url='https://github.com//ipyxturtle',
     keywords=[
         'ipython',
         'jupyter',

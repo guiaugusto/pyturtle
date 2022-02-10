@@ -17,7 +17,7 @@ $ jupyter nbextension enable --py --sys-prefix ipyxturtle
 
 ## Start
 
-To start a pyturtle environment, first do you have to instantiate a Canvas.
+To start a ipyxturtle environment, first do you have to instantiate a Canvas.
 
 ```py
 from ipyxturtle import Canvas
