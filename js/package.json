@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com//ipyxturtle.git"
+    "url": "https://github.com/x-turtle/ipyxturtle.git"
   },
   "keywords": [
     "jupyter",

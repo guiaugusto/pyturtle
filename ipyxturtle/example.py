@@ -69,9 +69,9 @@ class Turtle(widgets.DOMWidget):
         }
 
 @widgets.register
-class TurtleCanvas(widgets.DOMWidget):
-    _view_name = Unicode('TurtleCanvasView').tag(sync=True)
-    _model_name = Unicode('TurtleCanvasModel').tag(sync=True)
+class Canvas(widgets.DOMWidget):
+    _view_name = Unicode('CanvasView').tag(sync=True)
+    _model_name = Unicode('CanvasModel').tag(sync=True)
     _view_module = Unicode('ipyxturtle').tag(sync=True)
     _model_module = Unicode('ipyxturtle').tag(sync=True)
     _view_module_version = Unicode('^0.1.0').tag(sync=True)

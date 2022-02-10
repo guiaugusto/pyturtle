@@ -1,12 +1,12 @@
 import { TurtleComponent } from 'turtle-component';
 import * as widgets from '@jupyter-widgets/base';
 
-export class TurtleCanvasModel extends widgets.DOMWidgetModel {
+export class CanvasModel extends widgets.DOMWidgetModel {
     defaults() {
         return {
             ...super.defaults(),
-            _model_name: 'TurtleCanvasModel',
-            _view_name: 'TurtleCanvasView',
+            _model_name: 'CanvasModel',
+            _view_name: 'CanvasView',
             _model_module: 'ipyxturtle',
             _view_module: 'ipyxturtle',
             _model_module_version: '0.1.0',
@@ -15,7 +15,7 @@ export class TurtleCanvasModel extends widgets.DOMWidgetModel {
     }
 }
 
-export class TurtleCanvasView extends widgets.DOMWidgetView {
+export class CanvasView extends widgets.DOMWidgetView {
     render() {
         this.turtles = {};
         this.create_canvas();
