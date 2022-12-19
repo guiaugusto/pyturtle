@@ -4,3 +4,5 @@ nbextension
 node_modules/
 dist/
 __pycache__
+env/
+.ipynb_checkpoints/
