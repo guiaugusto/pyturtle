@@ -1,4 +1,4 @@
-import { TurtleComponent } from 'turtle-component';
+import { TurtleComponent } from 'xturtle';
 import * as widgets from '@jupyter-widgets/base';
 
 export class CanvasModel extends widgets.DOMWidgetModel {
@@ -33,19 +33,35 @@ export class CanvasView extends widgets.DOMWidgetView {
     }
 
     create_canvas() {
-        let backgroundCanvas = document.createElement('canvas');
+        const backgroundCanvas = document.createElement('canvas');
         this.canvas = new TurtleComponent();
 
         this.canvas.width = this.model.get('width');
         this.canvas.height = this.model.get('height');
 
+        backgroundCanvas.id = 'bgCanvas';
         backgroundCanvas.setAttribute('width', this.canvas.width);
         backgroundCanvas.setAttribute('height', this.canvas.height);
 
         this.canvas.canvasStyle = this.model.get('canvas_style');
         this.canvas.spriteScale = this.model.get('sprite_scale');
         this.canvas.initializeCanvas(this.el);
+
         this.el.appendChild(backgroundCanvas);
+
+        this.el.style.cssText = `
+            width: ${this.canvas.width};
+            height: ${this.canvas.height};
+            z-index: 999;
+            background-color: white;
+            position: fixed;
+            border-color: grey;
+            border-width: 1px;
+            border: 1px solid grey;
+            right: 0;
+            bottom: 0;
+        `
+        document.body.prepend(this.el);
 
         this.set_canvas();
     }
