@@ -1,6 +1,8 @@
-pyturtle.egg-info
+ipyxturtle.egg-info
 labextension
 nbextension
 node_modules/
 dist/
 __pycache__
+env/
+.ipynb_checkpoints

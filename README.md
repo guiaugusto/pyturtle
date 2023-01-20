@@ -10,14 +10,25 @@ Simulating robotic commands to draw a figure into a clean surface, you can creat
 
 ```sh
 $ pip install ipyxturtle
-$ jupyter nbextension enable --py --sys-prefix ipyxturtle
+$ jupyter nbextension install --py ipyxturtle --user
+$ jupyter nbextension enable --sys-prefix --py ipyxturtle
 ```
+
+# Development install
+
+```sh
+$ python -m pip install -e .
+$ jupyter nbextension install --py ipyxturtle --user
+$ jupyter nbextension enable --sys-prefix --py ipyxturtle
+```
+
+To watch every change on javascript module, enter on `js/lib` and execute `yarn watch`.
 
 # Commands
 
 ## Start
 
-To start a pyturtle environment, first do you have to instantiate a Canvas.
+To start a ipyxturtle environment, first do you have to instantiate a Canvas.
 
 ```py
 from ipyxturtle import Canvas
