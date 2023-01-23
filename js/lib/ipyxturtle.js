@@ -9,8 +9,8 @@ export class CanvasModel extends widgets.DOMWidgetModel {
             _view_name: 'CanvasView',
             _model_module: 'ipyxturtle',
             _view_module: 'ipyxturtle',
-            _model_module_version: '0.1.0',
-            _view_module_version: '0.1.0'
+            _model_module_version: '1.0.0',
+            _view_module_version: '1.0.0'
         }
     }
 }

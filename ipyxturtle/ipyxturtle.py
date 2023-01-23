@@ -74,8 +74,8 @@ class Canvas(widgets.DOMWidget):
     _model_name = Unicode('CanvasModel').tag(sync=True)
     _view_module = Unicode('ipyxturtle').tag(sync=True)
     _model_module = Unicode('ipyxturtle').tag(sync=True)
-    _view_module_version = Unicode('^0.1.0').tag(sync=True)
-    _model_module_version = Unicode('^0.1.0').tag(sync=True)
+    _view_module_version = Unicode('^1.0.0').tag(sync=True)
+    _model_module_version = Unicode('^1.0.0').tag(sync=True)
     _auto_increment_counter = Integer(0).tag(sync=True)
 
     width = Integer(400).tag(sync=True)
