@@ -1,6 +1,6 @@
 {
   "name": "ipyxturtle",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Jupyter Widget Library to simulate Logo language in python environment",
   "author": "Guilherme Silva",
   "main": "lib/index.js",
